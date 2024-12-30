@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "DebugDesk RealTime code collabration feature backend",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/Milan-Sharma1/debugdesk-realtime-backend/issues"
   },
-  "homepage": "https://github.com/Milan-Sharma1/debugdesk-realtime-backend#readme"
+  "homepage": "https://github.com/Milan-Sharma1/debugdesk-realtime-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
 }
