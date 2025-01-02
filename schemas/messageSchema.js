@@ -9,6 +9,6 @@ export const messageValidation = z.object({
     content: z
         .string()
         .min(2, "Message should me min 2 char long")
-        .max(5000, "Msg is too large"),
+        .max(15000, "Msg is too large"),
     sentTo: z.string().min(1),
 });

@@ -23,20 +23,20 @@ app.get("/hello", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-    console.log("A user connected");
+    // console.log("A user connected");
 
     socket.on("initialSetup", (connectedUserID) => {
         socket.join(connectedUserID); //to receive private msg notification a user must always in selfRoom
-        console.log(`Socket ${socket.id} joined selfRoom ${connectedUserID}`);
+        // console.log(`Socket ${socket.id} joined selfRoom ${connectedUserID}`);
     });
 
     socket.on("joinRoom", (id) => {
         socket.join(id); //either quesId or another userId to send msg in group or private
-        console.log(`Socket ${socket.id} joined chatRoom ${id}`);
+        // console.log(`Socket ${socket.id} joined chatRoom ${id}`);
     });
     // Listen for incoming messages
     socket.on("message", async ({ id, data }) => {
-        console.log("Received message:", data);
+        // console.log("Received message:", data);
         const result = await messageValidation.safeParseAsync(data);
         if (!result.success) return;
         const [user, response] = await Promise.all([
@@ -51,6 +51,7 @@ io.on("connection", (socket) => {
     // Handle disconnection
     socket.on("disconnect", () => {
         console.log("A user disconnected");
+        // Handle any cleanup if necessary
     });
 });
 
