@@ -40,7 +40,7 @@ app.use(
 
 //for testing
 app.get("/hello", (req, res) => {
-    res.send("Hello, world!");
+    res.json({ success: true, message: "hello" });
 });
 
 io.on("connection", (socket) => {
